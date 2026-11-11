@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+
+    <h2>KALKULATOR SEDERHANA</h2>
+
+    Angka pertama:
+    <input type="number" id="angka1">
+    <br><br>
+
+    Angka kedua:
+    <input type="number" id="angka2">
+    <br><br>
+
+    <button onclick="hitung('+')">+</button>
+    <button onclick="hitung('-')">-</button>
+    <button onclick="hitung('*')">×</button>
+    <button onclick="hitung('/')">÷</button>
+
+    <h3>Hasil: <span id="hasil">0</span></h3>
+
+    <script>
+        function hitung(operator) {
+            var a = Number(document.getElementById("angka1").value);
+            var b = Number(document.getElementById("angka2").value);
+            var hasil;
+
+            if (operator == '+') {
+                hasil = a + b;
+            } else if (operator == '-') {
+                hasil = a - b;
+            } else if (operator == '*') {
+                hasil = a * b;
+            } else if (operator == '/') {
+                hasil = b !== 0 ? a / b : "Tidak bisa dibagi 0";
+            }
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+
+</body>
+</html>
